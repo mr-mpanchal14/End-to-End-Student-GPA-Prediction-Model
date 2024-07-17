@@ -1,0 +1,211 @@
+<html>
+  <body>
+    <div class="login">
+      <h1>Student Exam Performance Indicator</h1>
+
+      <form action="{{ url_for('predict_datapoint')}}" method="post">
+        <h1>
+          <legend>Student Exam Performance Prediction</legend>
+        </h1>
+
+        <div class="mb-3">
+          <label class="form-label">Age</label>
+          <input
+            class="form-control"
+            type="number"
+            name="age"
+            placeholder="Enter your Age"
+            min="13"
+            max="20"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label">Gender</label>
+          <select
+            class="form-control"
+            name="gender"
+            placeholder="Enter you Gender"
+            required
+          >
+            <option class="placeholder" selected disabled value="">
+              Select your Gender
+            </option>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+          </select>
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label">Ethnicity</label>
+          <select
+            class="form-control"
+            name="race_ethnicity"
+            placeholder="Enter you ethnicity"
+            required
+          >
+            <option class="placeholder" selected disabled value="">
+              Select Ethnicity
+            </option>
+            <option value="Caucasian">Caucasian</option>
+            <option value="African American">African American</option>
+            <option value="Asian">Asian</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label">Parent's Education Level</label>
+          <select
+            class="form-control"
+            name="parental_education"
+            placeholder="Enter your Parent's Education Level"
+            required
+          >
+            <option class="placeholder" selected disabled value="">
+              Select Education Level
+            </option>
+            <option value="High School">High School</option>
+            <option value="Some College">Some College</option>
+            <option value="Bachelor's">Bachelor's</option>
+            <option value="Higher">Higher</option>
+            <option value="None">None</option>
+          </select>
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label">Weekly Study Time</label>
+          <input
+            class="form-control"
+            type="number"
+            name="study_time_weekly"
+            placeholder="Enter your Weekly Study Time"
+            min="0"
+            max="25"
+            step="0.01"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label">Absences</label>
+          <input
+            class="form-control"
+            type="number"
+            name="absent"
+            placeholder="Enter your monthly Absences"
+            min="0"
+            max="31"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label">Tutor</label>
+          <select
+            class="form-control"
+            name="tutor"
+            placeholder="Do you go for tutoring?"
+            required
+          >
+            <option class="placeholder" selected disabled value="">
+              Select your Answer
+            </option>
+            <option value="Yes">Yes</option>
+            <option value="No">No</option>
+          </select>
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label">Parental Support</label>
+          <select
+            class="form-control"
+            name="parental_supp"
+            placeholder="Rate your Parent's role in tutoring you."
+            required
+          >
+            <option class="placeholder" selected disabled value="">
+              Select your Answer
+            </option>
+            <option value="Low">Low</option>
+            <option value="Moderate">Moderate</option>
+            <option value="High">High</option>
+            <option value="None">None</option>
+          </select>
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label">Extracurricular Activites</label>
+          <select
+            class="form-control"
+            name="extracurr"
+            placeholder="Do you participate in Extracurricular Activites?"
+            required
+          >
+            <option class="placeholder" selected disabled value="">
+              Select your Answer
+            </option>
+            <option value="Yes">Yes</option>
+            <option value="No">No</option>
+          </select>
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label">Sports</label>
+          <select
+            class="form-control"
+            name="sports"
+            placeholder="Do you participate in Sports Activites?"
+            required
+          >
+            <option class="placeholder" selected disabled value="">
+              Select your Answer
+            </option>
+            <option value="Yes">Yes</option>
+            <option value="No">No</option>
+          </select>
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label">Music</label>
+          <select
+            class="form-control"
+            name="music"
+            placeholder="Do you participate in Music Activites"
+            required
+          >
+            <option class="placeholder" selected disabled value="">
+              Select your Answer
+            </option>
+            <option value="Yes">Yes</option>
+            <option value="No">No</option>
+          </select>
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label">Volunteering</label>
+          <select
+            class="form-control"
+            name="volunteer"
+            placeholder="Do you participate in Volunteering?"
+            required
+          >
+            <option class="placeholder" selected disabled value="">
+              Select your Answer
+            </option>
+            <option value="Yes">Yes</option>
+            <option value="No">No</option>
+          </select>
+        </div>
+
+        <div class="mb-3">
+          <input
+            class="btn btn-primary"
+            type="submit"
+            value="Predict your Maths Score"
+            required
+          />
+        </div>
+      </form>
+      <h2>THE prediction is {{results}}</h2>
+    </div>
+  </body>
+</html>
